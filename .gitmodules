@@ -1,0 +1,3 @@
+[submodule "go-http-redis"]
+	path = go-http-redis
+	url = https://github.com/AnAsianGangster/go-http-redis

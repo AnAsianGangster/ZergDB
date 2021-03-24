@@ -1,0 +1,26 @@
+version: '3.9' # optional since v1.27.0
+services:
+    go-http-redis-0:
+        build: ./go-http-redis
+        environment:
+            - SERVER_PORT=5000
+            - GIN_MODE=release
+        ports:
+            - 5000:5000
+        links:
+            - redis
+    go-http-redis-1:
+        build: ./go-http-redis
+        environment:
+            - SERVER_PORT=5001
+            - GIN_MODE=release
+        ports:
+            - 5001:5001
+        links:
+            - redis
+    redis:
+        image: redis:alpine
+        ports:
+            - 6379:6379
+        expose:
+            - 6379
