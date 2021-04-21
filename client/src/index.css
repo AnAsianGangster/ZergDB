@@ -63,3 +63,15 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
+
+.single-profile-display {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+
+.single-profile-display h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 8px;
+}
