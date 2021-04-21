@@ -7,7 +7,7 @@ class Create extends React.Component {
 
         this.state = {
             id: '',
-            value: null,
+            value: 'null',
         }
     }
 
@@ -18,7 +18,7 @@ class Create extends React.Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        this.state.value = (String(this.state.value).toLowerCase() == "true")
+        // this.state.value = (String(this.state.value).toLowerCase() == "true")
         axios.post('http://localhost:3000/profile', this.state)
         .then(response => {
             console.log(response)
