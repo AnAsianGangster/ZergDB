@@ -1,30 +1,13 @@
 import { useEffect, useState } from "react";
-import ProfileDisplay from "./ProfileDisplay";
 import SingleProfileDisplay from "./SingleProfileDisplay";
 import SearchBox from "./SearchBox";
 
 
 const Home = () => {
-  const [searchInput, setSearchInput] = useState('')
   const [singleProfile, setSingleProfile] = useState(null)
-  const [profiles, setProfiles] = useState(null)
-
-
-  //   useEffect(()=> {
-  //   fetch('http://localhost:3000/profile')
-  //   .then(res => {
-  //     return res.json();
-  //   })
-  //   .then((data) => {
-  //     console.log(data)
-  //     setProfiles(data)
-  //   })
-  // },[])
 
   const handleChange = e => {
     console.log(e.target.value)
-
-    setSearchInput(e.target.value)
 
     fetch('http://localhost:3000/key-value-pair?key='+e.target.value, {mode: 'cors'})
     .then(res => {
@@ -46,9 +29,6 @@ const Home = () => {
       {/* <p>{searchInput}</p> */}
    
       {singleProfile && <SingleProfileDisplay singleProfile={singleProfile} />}
-
-      {profiles && <ProfileDisplay profiles={profiles} />}
-
 
     </div>
   );

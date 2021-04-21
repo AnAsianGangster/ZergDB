@@ -18,7 +18,6 @@ class Create extends React.Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        // this.state.value = (String(this.state.value).toLowerCase() == "true")
         axios.post('/key-value-pair', this.state)
         // axios.post('http://localhost:3000/key-value-pair', this.state)
         .then(response => {
