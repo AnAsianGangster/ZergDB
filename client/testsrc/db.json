@@ -1,0 +1,16 @@
+{
+  "profile": [
+    {
+      "id": "key",
+      "value": "value"
+    },
+    {
+      "id": "key2",
+      "value": true
+    },
+    {
+      "id": "key3",
+      "value": true
+    }
+  ]
+}
