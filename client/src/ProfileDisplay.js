@@ -4,9 +4,7 @@ const ProfileDisplay = ({ profiles }) => {
       {profiles.map(profile => (
           // { profile.value:   <p>yeah</p>}
         <div className="profile-preview" key={profile.id} >
-          <h2>Hello, { profile.id }</h2>
-          You are currently <b>{profile.value ? 'vaccinated' : 'unvaccinated'}</b>
-          <p>{profile.value ? 'Thanks for doing your part to keep Singapore safe!' : ''}</p>
+          <h2>{ profile.id }</h2> is <b>{profile.value ? 'vaccinated' : 'unvaccinated'}</b>
         </div>
       ))}
     </div>
@@ -14,4 +12,3 @@ const ProfileDisplay = ({ profiles }) => {
 }
  
 export default ProfileDisplay;
-
