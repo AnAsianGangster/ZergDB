@@ -10,33 +10,35 @@ const Home = () => {
   const [profiles, setProfiles] = useState(null)
 
 
-    useEffect(()=> {
-    fetch('http://localhost:3000/profile')
-    .then(res => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data)
-      setProfiles(data)
-    })
-  },[])
+  //   useEffect(()=> {
+  //   fetch('http://localhost:3000/profile')
+  //   .then(res => {
+  //     return res.json();
+  //   })
+  //   .then((data) => {
+  //     console.log(data)
+  //     setProfiles(data)
+  //   })
+  // },[])
 
   const handleChange = e => {
     console.log(e.target.value)
 
     setSearchInput(e.target.value)
 
-    fetch('http://localhost:3000/profile/'+e.target.value)
+    fetch('http://localhost:3000/key-value-pair?key='+e.target.value, {mode: 'cors'})
     .then(res => {
+      console.log(res)
       return res.json();
     })
-    .then((data) => {
-      console.log(data)
-      setSingleProfile(data)
+    .then((body) => {
+      console.log(body.data)
+      setSingleProfile(JSON.parse(body.data))
     })
-  };
-
-  console.log(singleProfile)
+    .catch(error => {
+      console.log(error)
+  })  
+};
 
   return (
     <div className="home">

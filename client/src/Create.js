@@ -6,8 +6,8 @@ class Create extends React.Component {
         super(props)
 
         this.state = {
-            id: '',
-            value: 'null',
+            key: '',
+            value: '',
         }
     }
 
@@ -19,7 +19,8 @@ class Create extends React.Component {
         e.preventDefault()
         console.log(this.state)
         // this.state.value = (String(this.state.value).toLowerCase() == "true")
-        axios.post('http://localhost:3000/profile', this.state)
+        axios.post('/key-value-pair', this.state)
+        // axios.post('http://localhost:3000/key-value-pair', this.state)
         .then(response => {
             console.log(response)
         })
@@ -29,14 +30,14 @@ class Create extends React.Component {
     }
 
     render() {
-        const {id, value} = this.state
+        const {key, value} = this.state
         return (
             <div>
                 <h2>Edit vaccination status</h2>
                 <p>if vaccinated, input value as true</p>
                 <form onSubmit={this.submitHandler}>
                     <div>
-                        <input type="text" name="id" value ={id} placeholder="NRIC number" onChange={this.changeHandler}/>
+                        <input type="text" name="key" value ={key} placeholder="NRIC number" onChange={this.changeHandler}/>
                     </div>
                     <div>
                         <input type="text" name="value" value={value} placeholder="New value" onChange={this.changeHandler}/>

@@ -2,14 +2,17 @@ const SingleProfileDisplay = ({ singleProfile }) => {
 
   console.log('heyy')
   console.log(singleProfile)
-  console.log(singleProfile.id)
+  console.log(singleProfile.key)
+  console.log(singleProfile.key!=="")
+  console.log(singleProfile.value!=="")
     return (
       <div className="single-profile-display">
-          {(typeof singleProfile.id !=='undefined')?
+          {/* {(typeof singleProfile.key !=='undefined')? */}
+          {(singleProfile.value !=="")?
           <div>
-            <h2>Hello, { singleProfile.id }</h2>
-            You are currently <b>{singleProfile.value ? 'vaccinated' : 'unvaccinated'}</b>
-            <p>{singleProfile.value ? 'Thanks for doing your part to keep Singapore safe!' : ''}</p>
+            <h2>Hello, { singleProfile.key }</h2>
+            You are currently <b>{singleProfile.value=="true" ? 'vaccinated' : 'unvaccinated'}</b>
+            <p>{singleProfile.value=="true" ? 'Thanks for doing your part to keep Singapore safe!' : ''}</p>
           </div>:    
           <div>Please enter a valid NRIC</div>
           }
