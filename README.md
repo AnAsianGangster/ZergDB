@@ -1,5 +1,4 @@
-# ZergDB
-# Distributed Systems and Computing
+# Distributed Systems and Computing Project
 Distributed Key-Value Store  
 Group 9  
 1003870    Ong Xin Tong  
@@ -7,3 +6,8 @@ Group 9
 1003826    Lim Jie Xin Evangeline  
 1002921    Poh Shi Hui  
 1003652    Hansing Junitra 
+
+# Setting up
+1. `git clone --recurse-submodules https://github.com/AnAsianGangster/ZergDB.git`
+2. `cd ZergDB`
+3. `docker-compose up`
